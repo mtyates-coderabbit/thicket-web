@@ -35,7 +35,7 @@ export function OrderHistory({ onSelect }: { onSelect: (id: string) => void }) {
             <td>
               <StatusBadge status={order.status} />
             </td>
-            <td className="num">{formatMoney(order.total, order.currency)}</td>
+            <td className="num">{formatMoney(order.totalAmount, order.currency)}</td>
           </tr>
         ))}
       </tbody>
