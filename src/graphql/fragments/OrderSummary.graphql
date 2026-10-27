@@ -3,6 +3,6 @@ fragment OrderSummary on Order {
   number
   status
   createdAt
-  total
+  totalAmount
   currency
 }

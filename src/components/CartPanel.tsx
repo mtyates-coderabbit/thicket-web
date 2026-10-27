@@ -77,7 +77,7 @@ export function CartPanel({ onViewOrder }: { onViewOrder: (id: string) => void }
       {confirmation && (
         <div className="confirmation">
           <p>
-            Order <strong>{confirmation.order.number}</strong> placed — {formatMoney(confirmation.order.total)}
+            Order <strong>{confirmation.order.number}</strong> placed — {formatMoney(confirmation.order.totalAmount)}
           </p>
           <p className="muted">{summarizePayment(confirmation.payment, confirmation.order.currency)}</p>
           <button className="link" onClick={() => onViewOrder(confirmation.order.id)}>

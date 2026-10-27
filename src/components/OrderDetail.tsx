@@ -49,7 +49,7 @@ export function OrderDetail({ id, onBack }: { id: string; onBack: () => void }) 
           </tr>
           <tr>
             <th colSpan={2}>Total</th>
-            <th className="num">{money(order.total)}</th>
+            <th className="num">{money(order.totalAmount)}</th>
           </tr>
         </tfoot>
       </table>
