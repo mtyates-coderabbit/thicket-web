@@ -1,0 +1,8 @@
+mutation RefundOrder($orderId: ID!) {
+  refundOrder(orderId: $orderId) {
+    ...OrderSummary
+    payment {
+      ...PaymentDetails
+    }
+  }
+}

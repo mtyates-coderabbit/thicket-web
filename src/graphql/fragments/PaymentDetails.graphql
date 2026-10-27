@@ -1,0 +1,8 @@
+fragment PaymentDetails on Payment {
+  id
+  status
+  method
+  last4
+  amount
+  capturedAt
+}

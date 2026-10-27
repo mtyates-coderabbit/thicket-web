@@ -1,0 +1,10 @@
+mutation Checkout($input: CheckoutInput!) {
+  checkout(input: $input) {
+    order {
+      ...OrderSummary
+    }
+    payment {
+      ...PaymentDetails
+    }
+  }
+}

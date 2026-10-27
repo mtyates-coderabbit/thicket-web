@@ -1,0 +1,8 @@
+fragment OrderSummary on Order {
+  id
+  number
+  status
+  createdAt
+  total
+  currency
+}

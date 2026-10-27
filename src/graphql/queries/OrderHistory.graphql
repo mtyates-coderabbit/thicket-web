@@ -1,0 +1,8 @@
+query OrderHistory($customerId: ID) {
+  orders(customerId: $customerId) {
+    ...OrderSummary
+    items {
+      id
+    }
+  }
+}

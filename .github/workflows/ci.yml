@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    name: Codegen, typecheck, test, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Pull API schema (thicket-api main)
+        run: npm run schema:pull
+        env:
+          THICKET_SCHEMA_SOURCE: remote
+      - name: Generate operation types
+        run: npm run codegen
+      - name: Verify committed schema and generated types are current
+        run: git diff --exit-code -- schema src/gql
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build

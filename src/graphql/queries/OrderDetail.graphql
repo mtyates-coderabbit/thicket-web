@@ -1,0 +1,28 @@
+query OrderDetail($id: ID!) {
+  order(id: $id) {
+    ...OrderSummary
+    subtotal
+    tax
+    items {
+      id
+      quantity
+      unitPrice
+      lineTotal
+      product {
+        id
+        name
+      }
+    }
+    payment {
+      ...PaymentDetails
+    }
+    shippingAddress {
+      line1
+      line2
+      city
+      region
+      postalCode
+      country
+    }
+  }
+}
